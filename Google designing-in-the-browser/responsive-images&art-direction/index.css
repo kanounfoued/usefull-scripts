@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 
+    This is the best practice to avoid layout shifting, because it relies on the aspect ratio of the images included into the box
+
+    * And Of course, it is a must to use different image sizes for different viewport.
+    * You should use images with no background otherwise you would notice the marge between the image and its container box 
+*/
+.img-container {
+  width: 600px;
+  aspect-ratio: 6 / 7;
+  overflow: hidden;
+  resize: both;
+  border: 1px solid;
+}
+
+.img-container img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
