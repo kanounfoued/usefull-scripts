@@ -1,0 +1,71 @@
+.grid {
+  display: grid;
+  /* 
+  grid-template-columns: repeat(number_of_columns, width [column name]);
+    To access repeated columns, we can specify the number of column
+    grid-template-columns: repeat(3, 30px [col-start]);
+
+  */
+}
+
+.grid-template-1 {
+  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+  grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+}
+
+.inline-grid {
+  display: -moz-inline-grid;
+  display: -ms-inline-grid;
+  display: inline-grid;
+}
+
+.item-a {
+  /* 
+    This is the shorthand version of grid-column-start / grid-column-end;
+    grid-column: 2 /span col4-start;
+    */
+  grid-column-start: 2;
+  grid-column-end: span col4-start;
+
+  /* 
+        This is the shorthand version of grid-row-start / grid-row-end;
+        grid-row: row1-start / 4;
+    */
+  grid-row-start: row1-start;
+  grid-row-end: 4;
+  background-color: red;
+}
+
+.item-b {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  background-color: blue;
+}
+
+.grid-template-2 {
+  margin-top: 50px;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: 2fr 50px 1fr 1fr;
+
+  grid-template-rows: 200px 200px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.item {
+  background-color: blue;
+}
+
+.item-img {
+  aspect-ratio: 125 / 83;
+  /* overflow: hidden; */
+  /* resize: both;  */
+}
+
+.item-img img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
