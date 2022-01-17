@@ -8,11 +8,25 @@
   </head>
   <body>
     <div class="root">
-      <div class="nav"></div>
+      <div class="nav">
+        <button id="toggle-side-bar">toggle side bar</button>
+      </div>
       <div class="main">
-        <div class="side-bar"></div>
-        <div class="content"></div>
+        <div id="side-bar" class="side-bar"></div>
+        <div id="content" class="content"></div>
       </div>
     </div>
+
+    <script>
+      const button = document.querySelector("#toggle-side-bar");
+
+      button.onclick = function () {
+        const sidebar = document.querySelector("#side-bar");
+        const content = document.querySelector("#content");
+
+        sidebar.classList.toggle("animate-side-bar");
+        content.classList.toggle("animate-content");
+      };
+    </script>
   </body>
 </html>
