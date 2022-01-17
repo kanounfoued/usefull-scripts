@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+.root {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 56px calc(100vh - 56px) 200px;
+
+  /* set the gutters between columns and rows
+    This is a shorthand version of (row-gap and column-gap)
+    gap: <grid-row-gap> <grid-column-gap>;
+  */
+
+  /* gap: 15px 10px; */
+  column-gap: 10px;
+  row-gap: 15px;
+
+  /* 
+    The dot(.) notation refers to an empty grid cell.
+    The none value refers to no grid area are defined. 
+  */
+  grid-template-areas:
+    "nav nav nav nav"
+    "sider-bar . main main"
+    "footer footer footer footer";
+}
+
+.nav {
+  grid-area: nav;
+  background-color: red;
+}
+
+.main {
+  grid-area: main;
+  background-color: greenyellow;
+}
+
+.sider-bar {
+  grid-area: sider-bar;
+  background-color: blue;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: black;
+}
