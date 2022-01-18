@@ -1,0 +1,89 @@
+.grid {
+  display: grid;
+  /* 
+    grid-template-columns: repeat(number_of_columns, width [column name]);
+      To access repeated columns, we can specify the number of column
+      grid-template-columns: repeat(3, 30px [col-start]);
+  
+    */
+}
+
+.grid-template-1 {
+  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+  grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+}
+
+.inline-grid {
+  display: -moz-inline-grid;
+  display: -ms-inline-grid;
+  display: inline-grid;
+}
+
+.item-a {
+  /* 
+      This is the shorthand version of grid-column-start / grid-column-end;
+      grid-column: 2 /span col4-start;
+      */
+  grid-column-start: 2;
+  grid-column-end: span col4-start;
+
+  /* 
+          This is the shorthand version of grid-row-start / grid-row-end;
+          grid-row: row1-start / 4;
+      */
+  grid-row-start: row1-start;
+  grid-row-end: 4;
+  background-color: red;
+}
+
+.item-b {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  background-color: blue;
+}
+
+.grid-template-2 {
+  margin-top: 50px;
+  /* grid-template-columns: repeat(24, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.item {
+  background-color: blue;
+}
+
+.item-img {
+  aspect-ratio: 125 / 83;
+  /* overflow: hidden; */
+  /* resize: both;  */
+}
+
+.item-img img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* Grid System Positionning */
+
+/* DEFAULT VALUES: strectch, start, end, center */
+/* justify-self: aligns a grid item inside a cell along the inline row axis */
+/* align-self: aligns a grid item inside a cell along the block column axis */
+/* place-self: <align-self> / <justify-self> */
+
+/* DEFAULT VALUES: strectch, start, end, center */
+/* justify-items: aligns all grid items along the inline row axis */
+
+/* DEFAULT VALUES: strectch, start, end, center, last baseline, first baseline */
+/* align-items: aligns all grid items along the block column axis */
+/* place-items:  <align-items> / <justify-items> */
+
+/* repeat(): may work with some powerfull keywords like */
+/* auto-fill: fit as many columns as possible on a row, even if they are empty  */
+/* auto-fit: fit whatever columns there are into the space. Prefer expanding columns to fill space rather than empty columns */
