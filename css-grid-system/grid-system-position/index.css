@@ -121,3 +121,21 @@
 .item-3 {
   background: red;
 }
+
+/* Grid auto column and row */
+.grid-template-4 {
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 60px 60px;
+  grid-auto-columns: 80px;
+}
+
+.item-4 {
+  background: black;
+}
+
+.item-new {
+  /* As there is no such values (10, 11)
+    The property above will create the lines between the additional columns to reach theses positions and create the new item instead of putting the items in between at 0px 
+    */
+  grid-column: 10 / 11;
+}
