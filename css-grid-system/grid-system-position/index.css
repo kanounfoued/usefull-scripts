@@ -1,3 +1,13 @@
+/* 
+  Note: about min-content and max-content
+  Example: let's take this sentence :  This is a good territory
+  
+  If we put an element width as min-content => it means the element width would be the width if the minimal character of the sentence, which it the letter (a)
+
+  If we put an element width to max-content => it means the element width would be the width of the whole sentence.
+
+*/
+
 .grid {
   display: grid;
   /* 
@@ -87,3 +97,27 @@
 /* repeat(): may work with some powerfull keywords like */
 /* auto-fill: fit as many columns as possible on a row, even if they are empty  */
 /* auto-fit: fit whatever columns there are into the space. Prefer expanding columns to fill space rather than empty columns */
+
+/* 
+  Sometimees the total size of the grid might be less than the size of its grid container. This case we can set the alignment of the grid within the grid container.
+
+  Default values: start, end, center, stretch, space-around, space-between, space-evenly
+  * justify-content: aligns the grid along the inline (row) axis 
+  * align-content: aligns the grid along the block (column) axis 
+  * place-content: <align-content> / justify-content
+*/
+
+.justify-content {
+  margin-top: 100px;
+}
+.grid-template-3 {
+  grid-template-columns: 200px 60px 300px;
+  grid-template-rows: 30px 50px 100px;
+  justify-content: start;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.item-3 {
+  background: red;
+}
