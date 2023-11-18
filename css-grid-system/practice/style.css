@@ -1,0 +1,75 @@
+/* css-grid-system/practice/assets */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --secondary-color: #202631;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "left-sidebar main main main main main main main main right-sidebar right-sidebar right-sidebar";
+}
+
+.left-sidebar {
+  grid-area: left-sidebar;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+
+  & .logo-icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  & .icon {
+    height: 30px;
+    width: 30px;
+
+    & img {
+      display: block;
+      margin-inline: auto;
+    }
+  }
+
+  & nav {
+    margin-top: auto;
+  }
+
+  & ul {
+    padding: 0;
+    list-style: none;
+
+    & li + li {
+      margin-top: 3rem;
+    }
+  }
+
+  & .settings {
+    margin-top: 5rem;
+  }
+}
+
+.main {
+  grid-area: main;
+}
+
+.right-sidebar {
+  grid-area: right-sidebar;
+}
