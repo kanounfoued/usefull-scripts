@@ -1,4 +1,5 @@
 import { POLYNOM_CHAR } from "./PolyEnum.mjs";
+import Polynom from "./Polynom.mjs";
 
 export default class PolyCreator {
   string_poly;
