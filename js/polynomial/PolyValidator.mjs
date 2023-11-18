@@ -8,7 +8,7 @@ export default class PolyValidator {
 
   is_valid_at_the_end(char, i) {
     if (i === this.poly_string.length - 1)
-      return char === POLYNOM_CHAR.X || /[1-9]/.test(char);
+      return char === POLYNOM_CHAR.X || /[0-9]/.test(char);
 
     return true;
   }
