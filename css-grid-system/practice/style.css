@@ -5,6 +5,7 @@
 
 :root {
   --secondary-color: #202631;
+  --text-color: #e4e9f2;
 }
 
 body {
@@ -68,6 +69,42 @@ body {
 
 .main {
   grid-area: main;
+  padding: 2rem 1rem;
+
+  & ul {
+    display: inline-flex;
+    list-style: none;
+    padding: 0 0 2rem;
+    margin: 0 2rem;
+    border-bottom: 1px solid var(--text-color);
+
+    & li {
+      text-align: center;
+
+      & + li {
+        margin-left: 3rem;
+      }
+
+      & img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        outline: 1px solid var(--text-color);
+        padding: 0.1rem;
+        margin-bottom: 1rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      & label {
+        font-size: 12px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .right-sidebar {
